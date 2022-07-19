@@ -8,6 +8,7 @@
     --seventh-color: #000000;
     --svg: #AFB1B8
 }
+/* Увлекательнейшее приключение объявляется открытым */
 html{
     box-sizing: border-box;
   }
@@ -29,6 +30,7 @@ body {
     justify-content: flex-start;
     text-decoration: none;
   }
+  /* тег для секций */
   .secta{
     padding-top: 94px;
     padding-bottom: 94px;
@@ -105,17 +107,6 @@ body {
     letter-spacing: 0.02em;
     text-decoration: none;
   }
-  .nav-list .link-current::after{
-    position: absolute;
-    content: "";
-    bottom: 0px;
-    top: 0px;
-    width: 100%;
-    height: 5px;
-    background-color: var(--first-color);
-    border-radius: 4px;
-  }
-  
   .nav-list .link {
     display: block;
     padding-top: 32px;
@@ -192,6 +183,7 @@ body {
     line-height: 16px;
     letter-spacing: 0.02em;
 }
+/* Надеюсь сверху вы не потерялись, переходим к секции герой и прочее */
 .hero {
     background-color: var(--fifth-color);
     text-align: center;
@@ -223,19 +215,20 @@ body {
 }
 
 .button {
-    color: var(--fourth-color);
-    background-color: var(--first-color);
-    text-align: absolute;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    display: inline-block;
-    min-width: 200px;
-    min-height: 50px;
-    padding: 10px 25px;
-    border-radius: 4px;
-    text-decoration: none;
-    text-align: center;
+  display: inline-block;
+  min-width: 200px;
+  padding: 10px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  margin-top: 0px;
+  color: var(--fourth-color);
+  background-color: var(--first-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.06em; 
 }
 /* Модальное окно */
 .backdrop{
@@ -245,30 +238,33 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  
 }
 .modal{
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
   background-color: var(--fourth-color);
-  transform: translate(-50%, -50%);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 .modal-button{
   position: absolute;
-  background-image: url(./svg/close\ \(1\).svg);
-  width: 30px;
-  height: 30px;
   top: 8px;
   right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 0;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-image: url("./svg/close.svg");
   background-size: contain;
+  opacity: 1;
 }
+/* это три тега отвечающие за маленькие тексты */
 .mini-title {
   color: #212121;
     /* color: var(--second-color); */
@@ -301,34 +297,18 @@ body {
     line-height: 24px;
     letter-spacing: 0.03em;
 }
-.text {
-    color: var(--third-color);
-    font-weight: 400;
-    font-style: normal;
-    font-family: 'Roboto';
-    text-align: center;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0.03em;
-}
+
 .title{
     text-align: center;
     margin-bottom: 50px;
 }
+/* далее идут все отделы футера */
 .foot {
     background-color: var(--fifth-color);
     padding-left: 200px;
     padding-right: 200px;
     padding-top: 60px;
     padding-bottom: 60px;
-}
-.ji{
-  margin-top: 20px;
-  margin-left: 0px;
-  padding-right: 0px;
-}
-.jf{
-  display: flex;
 }
 .fj{
   display: flex;
@@ -367,7 +347,7 @@ body {
     margin-top: 20px;
     margin-bottom: 9px;
 }
-
+/* футер закончился, далее часть портфилио */
 .filter{
     display: flex;
     justify-content: center;
@@ -401,6 +381,7 @@ body {
 background-color: var(--first-color);
 color: var(--sixth-color);
 }
+/* первая часть портфолио закончилась, далее наша команда */
 .team img{
     margin-bottom: 30px;
   }
@@ -412,7 +393,7 @@ color: var(--sixth-color);
     justify-content: space-between;
     width: 270px;
 }
-.nt{
+.list-team{
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -436,14 +417,14 @@ color: var(--sixth-color);
   height: 120px;
   margin-bottom: 30px;
 }
-.sl{
+.item-icon-team{
  fill: #AFB1B8; 
 
 } 
-.sl:not(:last-child){
+.item-icon-team:not(:last-child){
   margin-right: 10px;
 }
-.sa{
+.link-team{
   fill: #AFB1B8;
   border-radius: 50%;
   align-items: center;
@@ -453,28 +434,11 @@ color: var(--sixth-color);
   justify-content: center;
   align-items: center;
 }
-.sa:hover{
+.link-team:hover{
   background-color: #2196F3;
   fill: #ffffff;
 }
-.pr{
-  fill: var(--fourth-color);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  align-items: center;
-  background-color: #FFFFFF1A;
-  text-align: center;
-}
-.pr:hover{
-  background-color: #2196F3;
-  fill: #ffffff;
-}
-.tit{
-  color: var(--fourth-color);
-  font-family: 'Roboto';
-  font-size: 700;
-}
+/* Далее постоянныне клиенты */
 .custom{
   padding-left: 0px;
 }
@@ -499,6 +463,7 @@ color: var(--sixth-color);
 .custom-ic{
 fill: currentColor;
 }
+/* Присоеденяйтесь */
 .join-tit{
   font-family: 'Roboto';
   font-style: normal;
@@ -531,6 +496,7 @@ fill: currentColor;
 color: var(--fourth-color);
 background-color: var(--first-color);
 }
+/* Имена людей из нашей команды */
 .name{
     color: var(--second-color);
     font-weight: 700;
@@ -539,6 +505,7 @@ background-color: var(--first-color);
     text-align: center;
     letter-spacing: 0.03em;
 }
+/* позиция из нашей команды */
 .pos{
     color: var(--third-color);
     font-weight: 400;
@@ -549,65 +516,69 @@ background-color: var(--first-color);
     font-size: 16px;
     line-height: 19px;
 }
-.examples{
+/* примеры работ из портфолио */
+ .examples{
     display: flex;
     flex-wrap: wrap;
     margin-left: -30px;
     margin-top: -30px;
     padding: 0px;
-    text-align: center;
   }
 
   .examples-link{
     flex-basis: calc((100% - 90px) / 3);
     margin-left: 30px;
     margin-top: 30px;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
   }
   .examples-title {
     color: var(--second-color);
-    font-family: 'Roboto';
-    font-style: normal;
+  
     font-weight: 700;
     font-size: 18px;
-    line-height: 36px;
+    line-height: 2;
     letter-spacing: 0.06em;
-    padding-left: 24px;
   }
   
   .examples-type {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
+    color: var(--third-color);
+  
     font-size: 16px;
-    line-height: 30px;
+    line-height: 1.8;
     letter-spacing: 0.03em;
-    padding-left: 24px;
   }
   /* Карточки будут двигаться. Ураааааа */
-  .examples-thumb{
+  .img-thumb{
     position: relative;
-    width: 100%;
-    height: 100%;
-    
+    overflow: hidden;
   }
+
   .overlane{
     position: absolute;
-    width: 370px;
-    height: 294px;
-    left: 0px;
-    top: 0px;    
-    background: rgba(33, 150, 243, 0.9);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
     color: var(--fourth-color);
     padding: 63px 24px;
-    margin: 0px;
+    margin: 0;
     font-size: 18px;
     line-height: 1.5;
     transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-
-
+.link-thumb{
+  text-decoration: none;
+}
+  .link-thumb:hover .overlane,
+  .link-thumb:focus .overlane{
+    transform: translateY(0);
+  }
+  .link-thumb:hover .link-text,
+  .link-thumb:focus .link-text{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+  /* невидимая надпись */
 .non-vision {
     position: absolute;
     width: 1px;
