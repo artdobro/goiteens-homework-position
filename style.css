@@ -262,7 +262,6 @@ body {
   border-radius: 50%;
   background-image: url("./svg/close.svg");
   background-size: contain;
-  opacity: 1;
 }
 /* это три тега отвечающие за маленькие тексты */
 .mini-title {
@@ -297,7 +296,7 @@ body {
     line-height: 24px;
     letter-spacing: 0.03em;
 }
-
+/* Заглавие в индексе */
 .title{
     text-align: center;
     margin-bottom: 50px;
